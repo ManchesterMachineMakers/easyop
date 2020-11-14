@@ -4,9 +4,10 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 public abstract class Linear extends LinearOpMode implements OpMode {
     public void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop) {
         try {
-            devices();
-            subassemblies();
+            devices(hardwareMap);
+            subassemblies(hardwareMap);
         } catch(Exception e) {
+            System.out.println("Error in initialization: " + e.toString());
             return;
         }
         init.apply();
