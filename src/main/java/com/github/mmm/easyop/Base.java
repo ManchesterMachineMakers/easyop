@@ -6,9 +6,6 @@ import java.lang.reflect.*;
 import java.lang.annotation.Annotation;
 
 public interface Base {
-    void opInit();
-    void opBeforeLoop();
-    void opLoop();
     default void devices() throws IllegalAccessException {
         Class<?> cls = this.getClass();
         Field[] fields = cls.getDeclaredFields();
@@ -20,5 +17,17 @@ public interface Base {
             }
         }
     }
-    void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop);
+    default void subassemblies() throws IllegalAccessException, InstantiationException {
+        Class<?> cls = this.getClass();
+        Field[] fields = cls.getDeclaredFields();
+        for (Field field : fields) {
+            for (Annotation anno : field.getDeclaredAnnotations()) {
+                if (anno.annotationType() == UseSubassembly.class) {
+                    Subassembly sa = (Subassembly) field.getType().newInstance();
+                    sa.init(((OpMode) this).hardwareMap);
+                    field.set(this, sa);
+                }
+            }
+        }
+    }
 }
