@@ -12,7 +12,9 @@ public interface Base {
         for(Field field : fields) {
             for(Annotation anno : field.getDeclaredAnnotations()) {
                 if(anno.annotationType() == Device.class) {
-                    field.set(this, hwMap.get(field.getType(), field.getName()));
+                    String name = ((Device)anno).value();
+                    if(name == "") name = field.getName();
+                    field.set(this, hwMap.get(field.getType(), name));
                 }
             }
         }
