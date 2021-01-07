@@ -124,3 +124,15 @@ public DcMotor motorL;
 @Device("motorL") // name is explicitly passed, variable name can be anything
 public DcMotor theMotor;
 ```
+
+## Using utilities
+To use a utility, import it (all utilities are under the `com.github.mmm.easyop.util` package), and then add its mixin interface to your class. For example, to use the logging utility:
+```java
+...
+import com.github.mmm.easyop.util.logging.Logger;
+...
+class ... implements Logger {
+...
+```
+### Utility documentation
+- [Logging](util/logging)
