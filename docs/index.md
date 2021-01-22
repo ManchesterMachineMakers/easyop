@@ -1,6 +1,6 @@
 # EasyOp
-© 2020 FTC Team 16221 Manchester Machine Makers
-
+© 2020 FTC Team 16221 Manchester Machine Makers \
+Main documentation: <https://munchkinhalfling.solidcommunity.net/public/easyop-doc/>
 ## Installation
 ```sh-script
 curl https://manchestermachinemakers.github.io/easyop/install.sh | sh
