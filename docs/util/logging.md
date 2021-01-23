@@ -13,6 +13,6 @@ Values:
 - Warn
 
 ## Methods
-### `log(LogPriority? priority, String message`
+### `void log(LogPriority? priority, String message)`
 Logs `message` to the Android `logcat` system. If `priority` is not specified, the default of `LogPriority.Info` is used.
 
