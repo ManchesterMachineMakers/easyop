@@ -2,7 +2,7 @@ package com.github.mmm.easyop;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 public abstract class Linear extends LinearOpMode implements OpMode {
-    public void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop) {
+    public void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop, OpModeStage afterLoop) {
         try {
             devices(hardwareMap);
             subassemblies(hardwareMap);
@@ -17,9 +17,10 @@ public abstract class Linear extends LinearOpMode implements OpMode {
             while(opModeIsActive()) {
                 loop.apply();
             }
+            afterLoop.apply();
         }
     }
     public void runOpMode() {
-        opmode(this::opInit, this::opBeforeLoop, this::opLoop);
+        opmode(this::opInit, this::opBeforeLoop, this::opLoop, this::opAfterLoop);
     }
 }
