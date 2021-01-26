@@ -1,8 +1,8 @@
 package com.github.mmm.easyop.util.logging;
-import android.util.Log;
 import java.lang.annotation.Annotation;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.util.RobotLog;
 
 public interface Logger {
 	default void log(String message) {
@@ -41,6 +41,12 @@ public interface Logger {
 				realPriority = Log.WARN;
 				break;
 		}
-		Log.println(realPriority, name, message);
+		RobotLog.internalLog(realPriority, name, message);
+	}
+	default String getLogFile() {
+		return RobotLog.getLogFilename();
+	}
+	default void cancelDiskLogging() {
+		RobotLog.cancelWriteLogcatToDisk();
 	}
 }
