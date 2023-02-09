@@ -1,4 +1,4 @@
-package com.github.mmm.easyop;
+package org.manchestermachinemakers.easyop;
 
 public interface OpMode extends Base {
     void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop, OpModeStage afterLoop);

@@ -1,4 +1,4 @@
-package com.github.mmm.easyop.util.logging;
+package org.manchestermachinemakers.easyop.util.logging;
 import java.lang.annotation.Annotation;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;

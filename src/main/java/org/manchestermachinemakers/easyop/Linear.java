@@ -1,4 +1,4 @@
-package com.github.mmm.easyop;
+package org.manchestermachinemakers.easyop;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 public abstract class Linear extends LinearOpMode implements OpMode {

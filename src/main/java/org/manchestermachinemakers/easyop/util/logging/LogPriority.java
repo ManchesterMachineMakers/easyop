@@ -1,4 +1,4 @@
-package com.github.mmm.easyop.util.logging;
+package org.manchestermachinemakers.easyop.util.logging;
 
 public enum LogPriority {
 	Assert,

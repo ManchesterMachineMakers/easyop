@@ -1,4 +1,4 @@
-package com.github.mmm.easyop;
+package org.manchestermachinemakers.easyop;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

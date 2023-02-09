@@ -1,4 +1,4 @@
-package com.github.mmm.easyop;
+package org.manchestermachinemakers.easyop;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import java.util.HashMap;
