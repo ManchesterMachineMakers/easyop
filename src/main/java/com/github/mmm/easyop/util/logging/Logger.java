@@ -3,6 +3,7 @@ import java.lang.annotation.Annotation;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.util.RobotLog;
+import android.util.Log;
 
 public interface Logger {
 	default void log(String message) {
