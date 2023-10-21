@@ -1,5 +1,6 @@
 package org.manchestermachinemakers.easyop;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.util.RobotLog;
 
 public abstract class Linear extends LinearOpMode implements OpMode {
     public void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop, OpModeStage afterLoop) {
@@ -7,7 +8,7 @@ public abstract class Linear extends LinearOpMode implements OpMode {
             devices(hardwareMap);
             subassemblies(hardwareMap);
         } catch(Exception e) {
-            System.out.println("Error in initialization: " + e.toString());
+            RobotLog.i("Error in initialization: " + e.toString());
             return;
         }
         init.apply();
