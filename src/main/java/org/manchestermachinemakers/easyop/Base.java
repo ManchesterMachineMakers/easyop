@@ -1,4 +1,6 @@
 package org.manchestermachinemakers.easyop;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.RobotLog;
 
@@ -22,10 +24,11 @@ public interface Base {
             }
         }
     }
-    default void subassemblies(HardwareMap hwMap) throws ReflectiveOperationException {
+    default void subassemblies(LinearOpMode self) throws ReflectiveOperationException {
         RobotLog.i("Injecting subassemblies");
-        HashMap<String, HardwareMap> args = new HashMap<>();
-        args.put("hwMap", hwMap);
+        HashMap<String, Object> args = new HashMap<>();
+        args.put("opMode", self);
+
         Injectable.injectAll(this, Subassembly.class, args);
     }
 }

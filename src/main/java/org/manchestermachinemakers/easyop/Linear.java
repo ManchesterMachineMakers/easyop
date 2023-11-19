@@ -6,7 +6,7 @@ public abstract class Linear extends LinearOpMode implements OpMode {
     public void opmode(OpModeStage init, OpModeStage beforeLoop, OpModeStage loop, OpModeStage afterLoop) {
         try {
             devices(hardwareMap);
-            subassemblies(hardwareMap);
+            subassemblies(this);
         } catch(Exception e) {
             RobotLog.i("Error in initialization: " + e.toString());
             return;
